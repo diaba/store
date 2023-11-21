@@ -1,0 +1,68 @@
+<!-- product-list.component.html -->
+<div class="product-container">
+  <!-- Loop through the products and display each as a card -->
+  <div class="product-card" *ngFor="let product of products" (click)="navigateToProductDetail(product.id)">
+    <h3>{{ product.name }}</h3>
+    <img [src]="product.img" class="a-dynamic-image" id="" style="max-height: 200px; max-width: 200px;"
+      data-old-hires="https://m.media-amazon.com/images/I/919ok5ZrsEL._AC_SL1500_.jpg" data-a-manual-replacement="true">
+    <p>{{ product.price | currency: 'USD' }}</p>
+  </div>
+</div>
+<script type="text/javascript">
+  var mainImgContainer = document.getElementById("main-image-container");
+  var landingImage = document.getElementById("landingImage");
+  var imgWrapperDiv = document.getElementById("imgTagWrapperId");
+
+  var containerWidth = mainImgContainer.offsetWidth;
+  var holderRatio = 1.3;
+  var shouldAutoPlay = false;
+  var containerHeight = containerWidth / holderRatio;
+  containerHeight = Math.min(containerHeight, 700);
+
+  var dynamicImageMaxHeight = 679;
+  var dynamicImageMaxWidth = 679;
+
+  dynamicImageMaxHeight = landingImage.naturalHeight;
+  dynamicImageMaxWidth = landingImage.naturalWidth;
+
+  var aspectRatio = dynamicImageMaxWidth / dynamicImageMaxHeight;
+
+  var imageMaxHeight = containerHeight;
+  var imageMaxWidth = containerWidth;
+
+  if (!shouldAutoPlay && !true) {
+    imageMaxHeight = Math.min(imageMaxHeight, dynamicImageMaxHeight);
+    imageMaxWidth = Math.min(imageMaxWidth, dynamicImageMaxWidth);
+  }
+
+
+  var useImageBlockLeftColCentering = false;
+  var rightMargin = 0;
+
+  if (typeof useImageBlockLeftColCentering !== "undefined" && useImageBlockLeftColCentering) {
+    mainImgContainer.style.marginRight = rightMargin + "px";
+  }
+  mainImgContainer.style.height = containerHeight + "px";
+
+  var imageMaxWidthBasedOnHeight = imageMaxHeight * aspectRatio;
+  var imageMaxHeightBasedOnWidth = imageMaxWidth / aspectRatio;
+  imageMaxHeight = Math.min(imageMaxHeight, imageMaxHeightBasedOnWidth);
+  imageMaxWidth = Math.min(imageMaxWidth, imageMaxWidthBasedOnHeight);
+
+  if (imgWrapperDiv) {
+    imgWrapperDiv.style.height = containerHeight + "px";
+  }
+
+  if (landingImage) {
+    landingImage.style.maxHeight = imageMaxHeight + "px";
+    landingImage.style.maxWidth = imageMaxWidth + "px";
+  }
+
+  if (shouldAutoPlay) {
+    if (landingImage) {
+      landingImage.style.height = imageMaxHeight + "px";
+      landingImage.style.width = imageMaxWidth + "px";
+    }
+  }
+
+</script>

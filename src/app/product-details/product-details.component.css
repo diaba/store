@@ -1,0 +1,23 @@
+/* Add styling for the product detail component */
+/* You can customize the styles based on your design */
+
+.product-detail-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.product-info {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.back-button {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}

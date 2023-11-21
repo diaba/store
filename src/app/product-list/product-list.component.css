@@ -1,0 +1,21 @@
+/* Add styling for the product list component */
+/* You can customize the styles based on your design */
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.product-card:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}

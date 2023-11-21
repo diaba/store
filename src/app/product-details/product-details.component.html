@@ -1,0 +1,13 @@
+<!-- product-detail.component.html -->
+<div class="product-detail-container">
+  <div class="product-info">
+    <h2>{{ productName }}</h2>
+    <h2>{{ productId }}</h2>
+    <p>Price: {{ productPrice | currency: 'USD' }}</p>
+    <!-- Additional product details can be added here -->
+    <img src="https://m.media-amazon.com/images/I/919ok5ZrsEL._AC_SX679_.jpg" class="a-dynamic-image" id=""
+      style="max-height: 338px; max-width: 440px;"
+      data-old-hires="https://m.media-amazon.com/images/I/919ok5ZrsEL._AC_SL1500_.jpg" data-a-manual-replacement="true">
+  </div>
+  <button class="back-button" (click)="navigateBack()">Back to Product List</button>
+</div>
